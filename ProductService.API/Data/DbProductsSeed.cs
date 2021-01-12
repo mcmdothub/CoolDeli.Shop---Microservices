@@ -33,15 +33,6 @@ namespace ProductService.API.Data
                     Quantity = 0 
                 },
 
-                new Product { 
-                    Name = "Nut, Banana & Seed Toast",      
-                    Description = "Breakfast", 
-                    Details = "Ut enim ad minim veniam, quis nostrud exercitat.", 
-                    Photo = @"https://images.squarespace-cdn.com/content/v1/5113fcede4b099bd04eebc8d/1428419835438-NZM6Q45EFGA2Y361VBZ3/ke17ZwdGBToddI8pDm48kBUDAxm-FLUF-OJf9moK1kV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UT_TXfTUFcrrnRvtinoH4JYxq5g0UB9t65pVePltZrd1IKYY7Qu0iTZQJ-GJ4dsqLQ/image-asset.jpeg", 
-                    Price = 18.99M, 
-                    Quantity = 100 
-                },
-
                 new Product {
                     Name = "Berry & Yogurt Smoothie",       
                     Description = "Breakfast", 
@@ -87,38 +78,11 @@ namespace ProductService.API.Data
                 },
 
                 new Product {
-                    Name = "Grilled Lamb & Feta Pita",
-                    Description = "Lunch",
-                    Details = "Ut enim ad minim veniam, quis nostrud exercitatio.",
-                    Photo = @"https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/18457-greek-lamb-pita-with-tzatziki-sauce-600x600.jpg?ext=.jpg",
-                    Price = 63.20M,
-                    Quantity = 0
-                },
-
-                new Product {
                     Name = "The Ultimate Veggie",     
                     Description = "Lunch",
                     Details = "Ut enim ad minim veniam, quis nostrud exercitation ul.",
                     Photo = @"https://www.theawesomegreen.com/wp-content/uploads/2014/09/Beet-Burger.jpg",
                     Price = 36.20M,
-                    Quantity = 100
-                },
-
-                new Product { 
-                    Name = "Chicken Salad Lunch Box",       
-                    Description = "Lunch",
-                    Details = "Ut enim ad minim veniam, quis nostrud exercitation u.",
-                    Photo = @"https://images.squarespace-cdn.com/content/v1/5113fcede4b099bd04eebc8d/1558534199888-L55LZW11S6QLKSMYC8HW/ke17ZwdGBToddI8pDm48kK60W-ob1oA2Fm-j4E_9NQB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kD6Ec8Uq9YczfrzwR7e2Mh5VMMOxnTbph8FXiclivDQnof69TlCeE0rAhj6HUpXkw/chicken-salad-lunch-box5.jpg", 
-                    Price = 23.50M, 
-                    Quantity = 100 
-                },
-
-                new Product {
-                    Name = "Coriander Chicken and Rice",
-                    Description = "Lunch",
-                    Details = "Ut enim ad minim veniam, quis nostrud exercitation u.",
-                    Photo = @"https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1533153257%2Fcoriander-chicken-and-rice-1809-p83.jpg%3Fitok%3DfbJZUEZb",
-                    Price = 46.50M,
                     Quantity = 100
                 },
 
@@ -174,7 +138,7 @@ namespace ProductService.API.Data
                     Photo = @"https://www.skinnytaste.com/wp-content/uploads/2015/01/AvocadoToastwithEgg-2-550x804.jpg",
                     Price = 26.50M,
                     Quantity = 100
-                }
+                },
             };
 
             foreach (var product in products)
