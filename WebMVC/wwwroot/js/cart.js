@@ -1,7 +1,7 @@
 ﻿// Add one item to cart
 function AddToCart(id, showAddedToCartMessage = true) {
 
-    fetch('https://localhost:44397/Cart/Add/' + id)
+    fetch('https://localhost:44304/Cart/Add/' + id)
         .then((response) => {
 
             if (response.ok) {
@@ -17,7 +17,7 @@ function AddToCart(id, showAddedToCartMessage = true) {
 // Remove one item from cart
 function RemoveFromCart(id) {
 
-    fetch('https://localhost:44397/Cart/Remove/' + id)
+    fetch('https://localhost:44304/Cart/Remove/' + id)
         .then((response) => {
 
             if (response.ok) {
@@ -29,7 +29,7 @@ function RemoveFromCart(id) {
 // Remove one item from cart
 function DeleteFromCart(id) {
 
-    fetch('https://localhost:44397/Cart/Delete/' + id)
+    fetch('https://localhost:44304/Cart/Delete/' + id)
         .then((response) => {
 
             if (response.ok) {
@@ -45,7 +45,7 @@ function DeleteFromCart(id) {
 
 // Fetch cart content
 function RefreshCartContent() {
-    fetch('https://localhost:44397/Cart')
+    fetch('https://localhost:44304/Cart')
         .then((response) => {
             if (response.ok) {
                 StartSessionTimer(); // Start timer

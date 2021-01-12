@@ -6,6 +6,40 @@
 
 @model Product
 
+<!-- Item starts -->
+<!--<div class="row menu-item">
+    <div class="col-3 p-0 position-relative">
+        <a asp-action="Details" asp-route-id="@Model.Id">
+            <img src="~/assets/images/menu1.jpg" class="img-responsive" alt="@Model.Name">
+        </a>
+        <button type="button" onclick="AddToCart('@Model.Id')" class="btn button-style button-style-2">Add to cart</button>
+    </div>
+    <div class="col-9 pl-4">
+        <div class="row no-gutters">
+            <div class="col-9 menu-item-name">
+                <h6>@Model.Name</h6>
+            </div>
+            <div class="col-3 menu-item-price text-right">
+                <h6>@Model.Price.ToString("C")</h6>
+            </div>
+        </div>
+        <div class="menu-item-description">
+            <p>@Html.DisplayFor(modelItem => Model.Description)</p>
+        </div>
+        <span class="align-self-center">
+            In stock:
+            @if (Model.Quantity > 0)
+            {
+                <i class="fas fa-check text-success"></i>
+            }
+            else
+            {
+                <i class="fas fa-times text-danger align-middle"></i>
+            }
+        </span>
+    </div>
+</div>-->
+
 <div class="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-around flex-wrap mb-2">
 
     <div class="card card-product border shadow m-2 p-2 rounded flex-grow-0 flex-sm-shrink-1 flex-md-shrink-0">

@@ -3,7 +3,7 @@
     public static class ApiGateway
     {
         // API gateway
-        private const string GATEWAY = "https://localhost:44331";
+        private const string GATEWAY = "https://localhost:44301";
 
         private const string PRODUCTS_API = GATEWAY + "/products-api/";     // =  https://localhost:44331/api/products/{catchAll}
         private const string ORDERS_API = GATEWAY + "/orders-api/";

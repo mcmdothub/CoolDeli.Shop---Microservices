@@ -13,7 +13,7 @@ namespace WebMVC.Services
         // Set headers and values
         const string ACCEPT_HEADER = "Accept";
         const string USER_AGENT_HEADER = "User-Agent";
-        const string USER_AGENT_VALUE = "WebshopProject";
+        const string USER_AGENT_VALUE = "CoolDeli.ShopProject";
         const string ACCEPT_VALUE = "application/json";
 
         public ApiService(IHttpClientFactory clientFactory)

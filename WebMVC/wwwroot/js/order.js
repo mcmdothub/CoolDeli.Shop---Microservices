@@ -6,7 +6,7 @@ let orderSubmit = function(event) {
     let formData = new FormData(form);
 
     // Post back 
-    fetch("https://localhost:44397/order", {
+    fetch("https://localhost:44304/order", {
         method: "POST",
         body: formData
     })
@@ -21,7 +21,7 @@ let orderSubmit = function(event) {
         })
 
         .then(data => {
-            window.location = 'https://localhost:44397/order/Success/?orderId=' + data;
+            window.location = 'https://localhost:44304/order/Success/?orderId=' + data;
         });
 
     event.preventDefault();

@@ -31,7 +31,7 @@ namespace APIGateway.Services
             var payload = new StringContent(json, Encoding.UTF8, APPLICATION_DATATYPE);
 
             // Send payload and get a response
-            var response = await _httpClient.PutAsync("https://localhost:44365/api/products/update/stock", payload);
+            var response = await _httpClient.PutAsync("https://localhost:44302/api/products/update/stock", payload);
 
             // If removing products from stock in ProductsService failed...
             if (!response.IsSuccessStatusCode)
@@ -52,7 +52,7 @@ namespace APIGateway.Services
             var payload = new StringContent(json, Encoding.UTF8, APPLICATION_DATATYPE);
 
             // Send payload and get a response
-            var response = await _httpClient.PostAsync("https://localhost:44380/api/orders/create", payload);
+            var response = await _httpClient.PostAsync("https://localhost:44303/api/orders/create", payload);
 
             // return status code
             return response;

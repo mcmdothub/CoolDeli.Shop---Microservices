@@ -4,16 +4,6 @@
 }
 
 <body>
-
-    <h2 class="mt-5 font-weight-light">
-        Products
-        @if (!string.IsNullOrWhiteSpace(ViewBag.SearchString))
-        {
-            <span style="font-size: 1rem"> - Searchresult: @((Model != null) ? Model.PaginationData.TotalProducts : 0)</span>
-        }
-    </h2>
-    <hr />
-
     <!-- inner banner -->
     <div class="inner-banner">
         <section class="w3l-breadcrumb">

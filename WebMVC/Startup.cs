@@ -1,6 +1,7 @@
 using CoolDeli.Database.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,14 @@ namespace WebMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // GDPR stuff
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             services.AddDistributedMemoryCache();
 
             services.AddSession(options =>
@@ -43,17 +52,38 @@ namespace WebMVC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-            // Configure cors so we can use AJAX
+            //// Configure cors so we can use AJAX
             services.AddCors(options =>
             {
+                //options.AddPolicy(_corsePolicyString,
+                //    builder =>
+                //    {
+                //        builder.WithOrigins("https://localhost:44364")
+                //               .AllowAnyHeader()
+                //               .AllowAnyMethod();
+                //    });
                 options.AddPolicy(_corsePolicyString,
                     builder =>
                     {
-                        builder.WithOrigins("https://localhost:44385")
+                        builder.AllowAnyOrigin()
                                .AllowAnyHeader()
                                .AllowAnyMethod();
                     });
             });
+
+            // Configure cors so we can use AJAX
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(_corsePolicyString,
+            //        builder =>
+            //        {
+            //            builder.WithOrigins("https://localhost:44364")
+            //                   .AllowAnyHeader()
+            //                   .AllowAnyMethod();
+            //        });
+            //});
+
+            services.AddControllersWithViews();
 
             // Register EmailSender for handeling cart items
             services.AddTransient<IEmailSender, EmailSender>();
@@ -68,8 +98,6 @@ namespace WebMVC
 
             // Components
             services.AddRazorPages();
-
-            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,6 +121,7 @@ namespace WebMVC
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();

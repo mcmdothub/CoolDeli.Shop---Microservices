@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    @*<div id="dimmer"></div>*@
+    <div id="dimmer"></div>
 
     <!--HEADER-->
     <header id="site-header" class="fixed-top">
@@ -89,6 +89,20 @@
                     </div>
                 </div>
                 <!-- END SEARCH BUTTON -->
+                <!--  CART  -->
+                <div class="cont-ser-position" id="cart-container">
+                    <div class="navigation">
+                        <div class="form-inline pl-1 pr-0 mr-sm-2 cart-zindex" id="cart-container">
+                            <a id="cart-open">
+                                <span id="cart-link"><i class="fas fa-cart-arrow-down pl-2"></i><span class="badge m-0 pl-1 pr-0" id="cart-item-count"></span></span>
+                            </a>
+
+                            <partial name="_CartDropPreviewPartial" />
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END CART  -->
                 <!-- TOOGGLE SWITCH FOR LIGHT AND DARK THEME -->
                 <div class="cont-ser-position">
                     <nav class="navigation">
@@ -104,29 +118,7 @@
                     </nav>
                 </div>
                 <!-- END TOOGGLE SWITCH FOR LIGHT AND DARK THEME -->
-                <!--  CART  -->
-                <div class="cont-ser-position">
-                    <div class="navigation">
 
-                        @*<form asp-controller="Products" asp-action="Index" method="get" class="form-inline" name="search">
-                                <input class="form-control p-0 m-0" autofocus type="search" name="search" placeholder="search..." aria-label="Search">
-                            </form>
-
-                            <div class="form-inline">
-                                <a class="pl-2 pr-2 search-divider" onclick="document.forms['search'].submit();"><i class="fas fa-search"></i></a>
-                            </div>*@
-
-                        <div class="form-inline pl-1 pr-0 mr-sm-2 cart-zindex" id="cart-container">
-                            <a id="cart-open">
-                                <span id="cart-link"><i class="fas fa-cart-arrow-down pl-2"></i><span class="badge m-0 pl-1 pr-0" id="cart-item-count"></span></span>
-                            </a>
-
-                            <partial name="_CartDropPreviewPartial" />
-
-                        </div>
-                    </div>
-                </div>
-                <!-- END CART  -->
 
             </nav>
 
@@ -265,6 +257,9 @@
     <button onclick="topFunction()" id="movetop" title="Go to top">
         <span class="fa fa-level-up" aria-hidden="true"></span>
     </button>
+
+    <script src="~/js/order.js" asp-append-version="true"></script>
+    <script src="~/js/cart.js" asp-append-version="true"></script>
     <script>
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
@@ -411,8 +406,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/a59e8a19b5.js" crossorigin="anonymous"></script>
-    <script src="~/js/order.js" asp-append-version="true"></script>
-    <script src="~/js/cart.js" asp-append-version="true"></script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
 
