@@ -49,8 +49,8 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
                         @*<li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
-                        </li>*@
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Menu">Menu</a>
+                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Menu</a>
                         </li>
@@ -152,31 +152,31 @@
                             <div class="col-6 column">
                                 <ul class="footer-gd-16">
                                     <li>
-                                        <a href="index.html">
+                                        <a asp-area="" asp-controller="Home" asp-action="Index">
                                             <i class="fa fa-angle-right"
                                                aria-hidden="true"></i>Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="about.html">
+                                        <a asp-area="" asp-controller="Home" asp-action="About">
                                             <i class="fa fa-angle-right" aria-hidden="true"></i>About
                                             Us
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#services">
+                                        <a asp-area="" asp-controller="Home" asp-action="Services">
                                             <i class="fa fa-angle-right"
                                                aria-hidden="true"></i>Services
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#blog">
+                                        <a asp-area="" asp-controller="Home" asp-action="BlogPosts">
                                             <i class="fa fa-angle-right" aria-hidden="true"></i>Blog
                                             Posts
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">
+                                        <a asp-area="" asp-controller="Home" asp-action="Contact">
                                             <i class="fa fa-angle-right"
                                                aria-hidden="true"></i>Contact Us
                                         </a>
@@ -186,24 +186,27 @@
                             <div class="col-6 column pl-0">
                                 <ul class="footer-gd-16">
                                     <li>
-                                        <a href="menu.html">
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>Foodies
+                                        <a asp-area="" asp-controller="Products" asp-action="Index">
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>CoolDeli
                                             Menu
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#privacy">
+                                        <a asp-area="" asp-controller="Home" asp-action="Privacy">
                                             <i class="fa fa-angle-right" aria-hidden="true"></i>Privacy
                                             Policy
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#terms">
+                                        <a asp-area="" asp-controller="Home" asp-action="TermsAndConditions">
                                             <i class="fa fa-angle-right" aria-hidden="true"></i>Terms and
                                             conditions
                                         </a>
                                     </li>
-                                    <li><a href="#faq"><i class="fa fa-angle-right" aria-hidden="true"></i>FAQ</a></li>
+                                    <li><a asp-area="" asp-controller="Home" asp-action="Faq">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i>FAQ
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -223,8 +226,15 @@
                 <div class="d-flex below-section justify-content-between align-items-center pt-4 mt-5">
                     <div class="columns text-lg-left">
                         <p class="copy-text">
-                            2020 Foodies. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">
-                                W3Layouts
+                            2020 CoolDeli. All rights reserved. Design by
+                            <a href="https://github.com/mcmdothub" target="_blank">
+                                mcmdothub //
+                            </a>
+                            <a href="https://github.com/Bragde" target="_blank">
+                                Bragde //
+                            </a>
+                            <a href="https://github.com/eriklindell-84" target="_blank">
+                                eriklindell-84
                             </a>
                         </p>
                     </div>
@@ -243,7 +253,7 @@
                                 <a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
                             </li>
                             <li>
-                                <a href="#github"><span class="fa fa-github" aria-hidden="true"></span></a>
+                                <a href="https://github.com/mcmdothub/CoolDeli.Shop---Microservices"><span class="fa fa-github" aria-hidden="true"></span></a>
                             </li>
                         </ul>
                     </div>
@@ -253,6 +263,11 @@
     </section>
     <!-- END FOOTER -->
     <!-- JS SCRIPTS -->
+    <!--  EXTRA SCRIPTS  -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/a59e8a19b5.js" crossorigin="anonymous"></script>
     <!-- move top -->
     <button onclick="topFunction()" id="movetop" title="Go to top">
         <span class="fa fa-level-up" aria-hidden="true"></span>
@@ -282,7 +297,7 @@
     </script>
     <!-- //move top -->
     <!-- common jquery plugin -->
-    <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+    @*<script src="~/assets/js/jquery-3.3.1.min.js"></script>*@
     <!-- //common jquery plugin -->
     <!-- theme switch js (light and dark)-->
     <script src="~/assets/js/theme-change.js"></script>
@@ -401,11 +416,7 @@
     <script src="~/assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
-    <!--  EXTRA SCRIPTS  -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://kit.fontawesome.com/a59e8a19b5.js" crossorigin="anonymous"></script>
+
 
 
     @await RenderSectionAsync("Scripts", required: false)
