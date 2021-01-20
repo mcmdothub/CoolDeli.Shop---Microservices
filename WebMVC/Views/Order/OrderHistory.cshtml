@@ -3,37 +3,54 @@
     ViewData["Title"] = "Orders";
 }
 
-<h3 class="mt-5">Orders</h3>
-
-<div class="table-responsive">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th class="d-none d-md-block border-bottom">OrderNr</th>
-                <th>Items</th>
-                <th>Total</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        @if (Model != null && Model.Count() > 0)
-        {
-            @foreach (var order in Model)
-            {
-                <tr style="cursor: pointer" onclick="window.location = 'https://localhost:44334/Order/OrderDetails/@order.Id'">
-                    <td style="min-width: 7rem"><a asp-action="OrderDetails" asp-route-id="@order.Id">@order.OrderDate.ToString("yyyy-MM-dd")</a></td>
-                    <td class="d-none d-md-block border-bottom-0"><small>@order.Id</small></td>
-                    <td>@order.OrderItems.Sum(x => x.Quantity)</td>
-                    <td>@order.OrderTotal.ToString("C2")</td>
-                    <td>@order.Status.Name</td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="5">No orders</td>
-            </tr>
-        }
-    </table>
+<!-- inner banner -->
+<div class="inner-banner">
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Orders History</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Orders History</li>
+            </ul>
+        </div>
+    </section>
 </div>
+<!-- //inner banner -->
+<!-- Orders History -->
+
+<section class="w3l-about2">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th class="d-none d-md-block border-bottom">OrderNr</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                @if (Model != null && Model.Count() > 0)
+                {
+                    @foreach (var order in Model)
+                    {
+                        <tr style="cursor: pointer" onclick="window.location = 'https://localhost:44334/Order/OrderDetails/@order.Id'">
+                            <td style="min-width: 7rem"><a asp-action="OrderDetails" asp-route-id="@order.Id">@order.OrderDate.ToString("yyyy-MM-dd")</a></td>
+                            <td class="d-none d-md-block border-bottom-0"><small>@order.Id</small></td>
+                            <td>@order.OrderItems.Sum(x => x.Quantity)</td>
+                            <td>@order.OrderTotal.ToString("C2")</td>
+                            <td>@order.Status.Name</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">No orders</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</section>

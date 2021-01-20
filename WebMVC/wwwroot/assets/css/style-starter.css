@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 /*--
 Author: W3layouts
@@ -1870,9 +1870,9 @@ pre code {
 }
 
 .table {
-  width: 100%;
+  width: 95%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: #f8f9fa;
 }
 
 .table th,
